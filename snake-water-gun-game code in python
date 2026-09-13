@@ -1,0 +1,44 @@
+import random
+
+def game_win(computer, user):#this will define a function named game_win that takes two parameters: computer and user. The function will determine the outcome of the game based on the choices made by both players.
+    if computer==user:#this will check if the computer's choice is equal to the user's choice. If they are equal, it means that both players made the same choice, resulting in a tie.
+        return None#this will return None from the function, indicating that the game ended in a tie.
+    elif computer=="s":#this will check if the computer's choice is "s" (snake). If it is, the code inside this block will be executed to determine the winner based on the user's choice.
+        if user=="w":#this will check if the user's choice is "w" (water). If it is, it means that the computer's snake beats the user's water, and the code inside this block will be executed.
+            return False#this will return False from the function, indicating that the user lost the game.
+        elif user=="g":#this will check if the user's choice is "g" (gun). If it is, it means that the user's gun beats the computer's snake, and the code inside this block will be executed.
+            return True#this will return True from the function, indicating that the user won the game.
+    elif computer=="w":#this will check if the computer's choice is "w" (water). If it is, the code inside this block will be executed to determine the winner based on the user's choice.
+        if user=="g":#this will check if the user's choice is "g" (gun). If it is, it means that the computer's water beats the user's gun, and the code inside this block will be executed.
+            return False#this will return False from the function, indicating that the user lost the game.
+        elif user=="s":#this will check if the user's choice is "s" (snake). If it is, it means that the user's snake beats the computer's water, and the code inside this block will be executed.
+            return True#this will return True from the function, indicating that the user won the game.
+    elif computer=="g":#this will check if the computer's choice is "g" (gun). If it is, the code inside this block will be executed to determine the winner based on the user's choice.
+        if user=="s":#this will check if the user's choice is "s" (snake). If it is, it means that the computer's gun beats the user's snake, and the code inside this block will be executed.
+            return False#this will return False from the function, indicating that the user lost the game.
+        elif user=="w":#this will check if the user's choice is "w" (water). If it is, it means that the user's water beats the computer's gun, and the code inside this block will be executed.
+            return True#this will return True from the function, indicating that the user won the game.
+
+ran_no=random.randint(1,100)#this will generate a random integer between 1 and 100 and assign it to the variable ran_no. The random module is used to generate random numbers in Python. The randint() function generates a random integer between the two specified values, inclusive. In this case, it will generate a random integer between 1 and 100, including both 1 and 100. The generated random number can be used later in the code for various purposes, such as simulations, games, or any other application that requires randomness.
+print("computer's turn: snake(s) water(w) gun(g)?")#this will print the message "computer's turn: snake(s) water(w) gun(g)?" to the console. It is asking the user to choose between snake, water, or gun by entering the corresponding letter (s, w, or g). The message is displayed to inform the user about the available options for the game.
+if ran_no%2==0:#this will check if the random number generated is even or odd. The modulus operator (%) is used to get the remainder of the division of ran_no by 2. If the remainder is 0, it means that ran_no is even, and the code inside the if block will be executed. If the remainder is not 0, it means that ran_no is odd, and the code inside the else block will be executed.
+    computer="s"
+
+    #print("the random number generated is even",ran_no)#this will print the message "the random number generated is even" followed by the value of ran_no if the condition in the if statement is true.
+elif ran_no%2!=0:#this will check if the random number generated is odd. The modulus operator (%) is used to get the remainder of the division of ran_no by 2. If the remainder is not 0, it means that ran_no is odd, and the code inside the elif block will be executed. If the remainder is 0, it means that ran_no is even, and the code inside the if block will be executed.
+    computer="w"
+    #print("the random number generated is odd",ran_no)#this will print the message "the random number generated is odd" followed by the value of ran_no if the condition in the elif statement is true.
+else:#this will execute the code inside the else block if none of the conditions in the if and elif statements are true. In this case, it will not be executed because the random number generated will always be either even or odd.
+    computer="g"
+
+user=input(" your turn: snake(s) water(w) gun(g)?").lower()#this will prompt the user to enter their choice of snake, water, or gun by displaying the message "your turn: snake(s) water(w) gun(g)?". The input() function is used to get the user's input as a string. The lower() method is then called on the input string to convert it to lowercase, ensuring that the comparison with the computer's choice is case-insensitive. The user's choice will be stored in the variable user for further processing in the game logic.
+result= game_win(computer, user)#this will call the game_win function with the computer's choice and the user's choice as arguments, and store the returned value in the variable result. The game_win function will determine the outcome of the game based on the choices made by both players.
+print(f"\nyou choice: {user}")#this will print the user's choice to the console. The f-string is used to format the string and include the value of the variable user in the output. The message will display "you choice" followed by the value of user, which represents the user's selection of snake, water, or gun.
+print(f"\ncomputer choice: {computer}")#this will print the computer's choice to the console. The f-string is used to format the string and include the value of the variable computer in the output. The message will display "computer choice" followed by the value of computer, which represents the computer's selection of snake, water, or gun.
+if result==None:#this will check if the value of result is None. If it is, it means that the game ended in a tie, and the code inside the if block will be executed.
+    print("the game is tie")#this will print the message "the game is tie" to the console, indicating that both the user and the computer made the same choice, resulting in a tie.
+elif result:#this will check if the value of result is True. If it is, it
+    #means that the user won the game, and the code inside the elif block will be executed.
+        print("you win")#this will print the message "you win" to the console, indicating that the user has won the game by making a choice that beats the computer's choice.
+else:#this will execute the code inside the else block if none of the conditions in the if and elif statements are true. In this case, it means that the user lost the game, and the code inside the else block will be executed.
+    print("you lose")#this will print the message "you lose" to the console, indicating that the user has lost the game by making a choice that is beaten by the computer's choice.
