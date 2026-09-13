@@ -1,0 +1,86 @@
+# 🐍💧🔫 Snake, Water & Gun Game
+
+A simple Python command-line game — a regional twist on the classic "Rock, Paper, Scissors" — where you play against the computer using **Snake**, **Water**, and **Gun**.
+
+## 📖 About the Game
+
+This is a mini project built in Python to practice **conditional statements**, **functions**, **randomization**, and **user input handling**. The computer randomly picks its move, the user enters theirs, and the game logic decides the winner based on simple rules.
+
+## 🎮 Rules
+
+| Choice | Beats | Loses To |
+|--------|-------|----------|
+| 🐍 Snake (`s`) | Water (`w`) | Gun (`g`) |
+| 💧 Water (`w`) | Gun (`g`) | Snake (`s`) |
+| 🔫 Gun (`g`) | Snake (`s`) | Water (`w`) |
+
+- Snake drinks Water 🐍 > 💧
+- Water short-circuits/damages the Gun 💧 > 🔫
+- Gun kills the Snake 🔫 > 🐍
+- If both players choose the same option, it's a **tie**.
+
+## 🛠️ How It Works
+
+1. The computer randomly selects one of the three options (`s`, `w`, or `g`) using Python's `random` module.
+2. The user is prompted to enter their choice via the console.
+3. The `game_win()` function compares both choices and determines the result:
+   - `True` → User wins
+   - `False` → User loses
+   - `None` → Tie
+4. The result is displayed on the screen along with both choices.
+
+## 🧩 Tech Stack
+
+- **Language:** Python 3
+- **Modules used:** `random`
+
+## 🚀 How to Run
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/<your-username>/snake-water-gun-game.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd snake-water-gun-game
+   ```
+3. Run the script:
+   ```bash
+   python snake_water_gun.py
+   ```
+4. Enter your choice when prompted:
+   ```
+   your turn: snake(s) water(w) gun(g)?
+   ```
+
+## 📷 Sample Output
+
+```
+computer's turn: snake(s) water(w) gun(g)?
+your turn: snake(s) water(w) gun(g)? g
+
+you choice: g
+
+computer choice: s
+
+you win
+```
+
+## 📌 Features
+
+- Randomized computer moves for a fair and unpredictable game.
+- Case-insensitive user input handling.
+- Clear win/lose/tie result messages.
+- Beginner-friendly, well-commented code.
+
+## 🔮 Future Improvements
+
+- [ ] Add input validation to handle invalid characters.
+- [ ] Add a scoring system for multiple rounds.
+- [ ] Build a GUI version using Tkinter or a web version using Flask/HTML.
+- [ ] Add a "play again" loop instead of running once per execution.
+
+## 🙋‍♂️ Author
+
+**DEEPAK SINGH**
+Feel free to connect and share feedback!
